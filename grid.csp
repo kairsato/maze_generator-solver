@@ -1,3 +1,6 @@
+#define M 10
+#define N 10
+var board[N][M} = [
 H H H H H H H G H O
 H O H H H H H O O H
 O H H H H H H O H H
@@ -8,3 +11,4 @@ H H H H O H H O H H
 H H H H H H H O H O
 H H O H H H H O H H
 H H H O H H H S H H
+];
