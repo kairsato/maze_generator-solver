@@ -1,0 +1,31 @@
+// @@Grid World Maze@@
+
+#include "grid.csp";
+
+// Constants of the maze
+#define H 0;
+#define O 1;
+#define S 2;
+#define G 3;
+
+// initialise the main process
+// each action process is guarded process to check if the next move is legit or not (not outside the board)
+Game = 	     [r-1>=0]MoveUp
+          [] [r+1<N]MoveDown
+          [] [c-1>=0]MoveLeft 
+          [] [c+1<M]MoveRight;
+
+// the process action
+// each process will check the next position if it is a open spot or a goal, then it can move
+// Template: Action = [condition]action_name{maze runner position changes if satisfied} -> Game
+MoveUp = [board[r-1][c]==O || board[r-1][c]==G]go_up{r=r-1} -> Game;
+MoveDown = [board[r+1][c]==O || board[r+1][c]==G]go_down{r=r+1} -> Game;
+MoveLeft = [board[r][c-1]==O || board[r][c-1]==G]go_left{c=c-1} -> Game;
+MoveRight = [board[r][c+1]==O || board[r][c+1]==G]go_right{c=c+1} -> Game;
+ 
+// The goal: reach the goal when row and column of the maze runner is at G on the board
+#define goal board[r][c] == G;
+
+// assert to see if the goal is satisfied
+#assert Game reaches goal;
+
