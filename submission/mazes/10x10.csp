@@ -1,0 +1,16 @@
+#define M 10;
+#define N 10;
+var r:{0..N-1} = 4;
+var c:{0..M-1} = 6;
+var board[N][M] = [
+O,O,O,O,O,O,O,O,O,H,
+O,H,H,H,H,H,H,H,O,H,
+O,H,O,O,O,O,O,H,O,H,
+H,H,O,H,H,H,O,H,O,H,
+O,O,O,H,O,O,O,H,O,H,
+O,H,H,H,H,H,H,H,G,H,
+O,H,O,O,O,O,O,H,O,H,
+O,H,O,H,H,H,O,H,O,H,
+O,O,O,O,O,H,O,O,O,H,
+H,H,H,H,H,H,H,H,H,H
+];

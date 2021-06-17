@@ -1,0 +1,26 @@
+#define M 20;
+#define N 20;
+var r:{0..N-1} = 10;
+var c:{0..M-1} = 14;
+var board[N][M] = [
+O,O,G,O,O,O,O,H,O,O,O,O,O,O,O,O,O,O,O,H,
+O,H,O,H,O,H,O,H,H,H,H,H,H,H,H,H,H,H,O,H,
+O,H,O,H,O,H,O,O,O,H,O,O,O,H,O,O,O,O,O,H,
+O,H,O,H,O,H,H,H,O,H,O,H,O,H,O,H,H,H,O,H,
+O,H,O,H,O,O,O,H,O,H,O,H,O,O,O,H,O,O,O,H,
+O,H,H,H,H,H,O,H,O,H,O,H,H,H,H,H,O,H,H,H,
+O,O,O,H,O,O,O,H,O,O,O,H,O,O,O,H,O,H,O,H,
+H,H,O,H,O,H,H,H,H,H,H,H,O,H,O,H,O,H,O,H,
+O,H,O,H,O,O,O,O,O,O,O,H,O,H,O,H,O,O,O,H,
+O,H,O,H,O,H,H,H,H,H,O,H,O,H,H,H,H,H,O,H,
+O,O,O,H,O,O,O,O,O,H,O,H,O,O,O,O,O,H,O,H,
+O,H,H,H,H,H,H,H,H,H,O,H,H,H,H,H,O,H,O,H,
+O,O,O,O,O,O,O,O,O,O,O,H,O,O,O,O,O,H,O,H,
+H,H,H,H,H,H,H,H,H,H,H,H,O,H,O,H,H,H,O,H,
+O,O,O,H,O,O,O,O,O,O,O,O,O,H,O,H,O,O,O,H,
+O,H,O,H,O,H,H,H,H,H,O,H,H,H,O,H,O,H,H,H,
+O,H,O,O,O,H,O,H,O,O,O,H,O,O,O,H,O,H,O,H,
+O,H,H,H,H,H,O,H,O,H,H,H,H,H,H,H,O,H,O,H,
+O,O,O,O,O,O,O,H,O,O,O,O,O,O,O,O,O,O,O,H,
+H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H,H
+];

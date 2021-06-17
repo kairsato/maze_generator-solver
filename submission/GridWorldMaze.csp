@@ -1,0 +1,52 @@
+// @@Grid World Maze@@
+
+// Constants of the maze
+#define H 0;
+#define O 1;
+#define S 2;
+#define G 3;
+
+
+// Dimension of the board
+#define M 10;
+#define N 10;
+
+
+//The following are variables of the system, which constitute the state space.
+//The initial valuation of the variables corresponds to the initial schema.
+//Note that top left position is [0][0], while bottom right position is [N][M]
+
+var board[N][M] = [
+		  		  O,O,O,O,O,O,O,O,O,O, // 0 row number starting from 0
+          		  O,O,H,H,O,H,O,O,O,O, // 1
+                  O,O,H,O,O,O,O,O,O,O, // 2
+                  O,O,H,G,H,O,O,O,O,O, // 3
+                  O,O,H,O,O,O,O,O,O,O, // 4
+		  		  O,O,O,H,O,O,O,O,O,O, // 5
+		  		  O,O,O,O,O,O,O,O,O,O, // 6
+		  		  O,O,O,O,O,O,O,O,O,O, // 7
+		  		  O,O,O,O,O,O,O,O,O,O, // 8
+                  O,O,O,O,O,O,O,O,O,O];// 9
+//   col number:  0 1 2 3 4 5 6 7 8 9
+
+// Maze Runner position
+var r:{0..N-1} = 4;
+var c:{0..M-1} = 9;
+
+// define the game
+Game = 	     [r-1>=0]MoveUp
+          [] [r+1<N]MoveDown
+          [] [c-1>=0]MoveLeft 
+          [] [c+1<M]MoveRight;
+
+// process
+MoveUp = [board[r-1][c]==O || board[r-1][c]==G]go_up{r=r-1} -> Game;
+MoveDown = [board[r+1][c]==O || board[r+1][c]==G]go_down{r=r+1} -> Game;
+MoveLeft = [board[r][c-1]==O || board[r][c-1]==G]go_left{c=c-1} -> Game;
+MoveRight = [board[r][c+1]==O || board[r][c+1]==G]go_right{c=c+1} -> Game;
+
+// The goal: reach the goal when row and column of the maze runner is at G on the board
+#define goal board[r][c] == G;
+#assert Game reaches goal;
+
+
