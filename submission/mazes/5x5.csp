@@ -1,11 +1,11 @@
 #define M 5;
 #define N 5;
-var r:{0..N-1} = 4;
-var c:{0..M-1} = 0;
+var r:{0..N-1} = 2;
+var c:{0..M-1} = 2;
 var board[N][M] = [
-O,O,O,O,O,
+O,O,O,G,O,
 O,H,H,H,O,
-O,O,O,H,O,
+O,H,O,H,O,
 H,H,O,H,O,
-O,O,O,G,O
+O,O,O,O,O
 ];
